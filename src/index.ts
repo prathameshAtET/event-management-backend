@@ -1,8 +1,7 @@
-import express from 'express';
+import express from 'express'; 
+import {PORT} from './env_vars'; //import required variables
 
 const app = express();
-
-const PORT = 3000;
 
 app.listen(PORT, () => {
     console.log(`Running on PORT ${PORT} at http://localhost:${PORT}`);
