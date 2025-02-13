@@ -1,15 +1,18 @@
-import express from 'express'; 
-import {PORT} from './env_vars'; //import required variables
+import express from 'express';
+import { PORT } from './env_vars'; //import required variables
 import eventRouter from './routes/eventRoutes';
+import { logAccessedUrls } from './middlewares/logAccess';
+import logger from './logger';
 
 const app = express();
 
 // middleware for parsing JSON bodies 
 app.use(express.json());
+app.use("/", logAccessedUrls);
 
 // for event routes
-app.use("/api/events",eventRouter);
+app.use("/api/events", eventRouter);
 
 app.listen(PORT, () => {
-    console.log(`Running on PORT ${PORT} at http://localhost:${PORT}`);
+    logger.info(`Started Server on PORT ${PORT}`);
 })
