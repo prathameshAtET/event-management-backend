@@ -1,6 +1,7 @@
 import express from 'express';
 import { PORT } from './env_vars'; //import required variables
 import eventRouter from './routes/eventRoutes';
+import attendeeRouter from './routes/attendeeRoutes';
 import { logAccessedUrls } from './middlewares/logAccess';
 import logger from './logger';
 import db, { testConnection } from './db/connection';
@@ -21,6 +22,9 @@ app.use("/", logAccessedUrls);
 
 // for event routes
 app.use("/api/events", eventRouter);
+
+// attendee routes
+app.use("/api/attendee",attendeeRouter)
 
 app.listen(PORT, () => {
     logger.info(`Started Server on PORT ${PORT}`);
