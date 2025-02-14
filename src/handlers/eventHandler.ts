@@ -3,7 +3,9 @@ import { EventCreationAttributes } from '../interfaces/Event';
 import { Event } from '../models/Event';
 
 export function getAllEvents(req: Request, res: Response) {
-    res.status(200).send({ success: true, ok: true });
+    const query = req.query;
+
+    res.status(200).send({ success: true, ok: true, query: query });
 }
 
 export function getEventDetailsByID(req: Request, res: Response) {
