@@ -1,12 +1,14 @@
 import winston, { format } from "winston";
 import { NODE_ENV } from "./env_vars";
+import { stack } from "sequelize/types/utils";
 
 const logger = winston.createLogger({
     level: 'info',
     format: format.combine(
         format.timestamp(),
-        format.printf(({ timestamp, level, message }) => {
-            return `${timestamp} [${level}] : ${message}`;
+        format.errors({ stack: true }),
+        format.printf(info => {
+            return `${info.timestamp} [${info.level}] : ${info.message} \n ${info.stack}`;
         })
     ),
     transports: [

@@ -1,7 +1,6 @@
 import { Router } from "express";
-import { createEvent, getAllEvents, getEventDetailsByID } from "../handlers/eventHandler";
+import { createEvent, getAllEvents, getEventDetailsByID, getEventAttendees } from "../handlers/eventHandler";
 import { parseEvent } from "../middlewares/parseEvent";
-import { getEventAttendees } from "../handlers/attendeeHandler";
 
 const router = Router();
 

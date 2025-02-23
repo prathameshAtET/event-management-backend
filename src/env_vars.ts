@@ -7,6 +7,9 @@ dotenv.config()
 export const PORT = process.env.PORT || 3000;
 export const NODE_ENV = process.env.NODE_ENV || 'dev';
 
+// querying hard upper limits
+export const DB_RETRIEVAL_UPPER_CAP = (process.env.DB_RETRIEVAL_UPPER_CAP as unknown as number) || 50;
+
 // handle missing DB info
 export const DATABASE_NAME = process.env.DATABASE_NAME || 'eventdb';
 export const DATABASE_USER = process.env.DATABASE_USER || 'eventapp';
