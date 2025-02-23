@@ -50,14 +50,14 @@ export class Event extends Model<
     declare ticketPrice: number;
 
     @Column({
-        type: DataType.STRING,
+        type: DataType.STRING(2000),
         allowNull: true,
     })
     declare description: string;
 
     @Column({
         type: DataType.INTEGER,
-        defaultValue: 0,
+        // defaultValue: 0,
         allowNull: false,
     })
     declare ticketsSold?: number;

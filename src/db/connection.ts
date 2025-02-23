@@ -14,13 +14,16 @@ const db = new Sequelize(DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, {
             trustServerCertificate: true,
         },
     },
-    models: [Event,Attendee]
+    models: [Event, Attendee]
 })
 
-export async function testConnection() {
+export async function initializeDatabase() {
     try {
         await db.authenticate();
         console.log('Connection has been established successfully.');
+        // Add sync after successful authentication
+        await db.sync({ alter: true });
+        console.log('Database synchronized successfully.');
     } catch (error) {
         logger.error('Unable to connect to the database:', error);
     }

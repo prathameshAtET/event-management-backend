@@ -17,4 +17,5 @@ export interface EventCreationAttributes {
     eventIcon?: string;
     ticketPrice: number;
     description: string;
+    ticketsSold: number;
 }
