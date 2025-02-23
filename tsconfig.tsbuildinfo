@@ -1,1 +1,1 @@
-{"root":["./src/index.ts"],"version":"5.7.3"}
+{"root":["./src/env_vars.ts","./src/index.ts","./src/logger.ts","./src/db/connection.ts","./src/handlers/attendeehandler.ts","./src/handlers/eventhandler.ts","./src/interfaces/attendee.ts","./src/interfaces/event.ts","./src/middlewares/logaccess.ts","./src/middlewares/parseevent.ts","./src/models/attendee.ts","./src/models/event.ts","./src/routes/attendeeroutes.ts","./src/routes/eventroutes.ts"],"version":"5.7.3"}
