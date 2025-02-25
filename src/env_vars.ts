@@ -15,3 +15,5 @@ export const DATABASE_NAME = process.env.DATABASE_NAME || 'eventdb';
 export const DATABASE_USER = process.env.DATABASE_USER || 'eventapp';
 export const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD || '';
 export const DATABASE_HOST = process.env.DATABASE_HOST || 'localhost';
+
+export const DATABASE_URL = process.env.DATABASE_URL || '';
